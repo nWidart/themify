@@ -12,7 +12,7 @@ class Resolver {
 
     /**
      * Constructor.
-     * 
+     *
      * @param Illuminate\Foundation\Application $app
      * @return Mpedrera\Themify\Resolver\Resolver
      */
@@ -67,9 +67,8 @@ class Resolver {
     {
         $router = $this->app->make('router');
         $route = $router->currentRouteAction();
-        
+
         if (($pos = strpos($route, '@')) !== false) {
-            Controller::setFilterer($router);
             $controllerName = substr($route, 0, $pos);
             return $this->app[$controllerName];
         }
